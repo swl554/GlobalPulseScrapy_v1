@@ -13,6 +13,19 @@ BOT_NAME = 'GlobalPulseScrapy_v1'
 
 SPIDER_MODULES = ['GlobalPulseScrapy_v1.spiders']
 NEWSPIDER_MODULE = 'GlobalPulseScrapy_v1.spiders'
+LOG_LEVEL = 'INFO'
+#DOWNLOAD_DELAY = 0.5
+AUTOTHROTTLE_ENABLED = True
+COOKIES_ENABLED = False
+
+ITEM_PIPELINES = {
+    'GlobalPulseScrapy_v1.pipelines.JsonPipeline':300,
+    'GlobalPulseScrapy_v1.pipelines.CsvPipeline':400,
+    'GlobalPulseScrapy_v1.pipelines.TxtPipeline':500,
+    'GlobalPulseScrapy_v1.pipelines.DatPipeline':600,
+    'GlobalPulseScrapy_v1.pipelines.XlsPipeline':700,
+    'GlobalPulseScrapy_v1.pipelines.LinkPipeline':800
+}
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
